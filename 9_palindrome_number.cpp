@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool Ispalindrome(int n) {
+  n = abs(n);
+  int original = n;
+  int reverse = 0;
+
+  while(n != 0) {
+    int digit = n % 10;
+    reverse = reverse * 10 + digit;
+    n = n / 10;
+  }
+  return (original == reverse);
+}
+
+int main() {
+  int n;
+  cin>>n;
+
+  if(Ispalindrome(n)){
+    cout<<"yes";
+  }
+}
